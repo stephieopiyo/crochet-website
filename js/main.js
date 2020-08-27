@@ -4,6 +4,7 @@ const carticon = document.querySelector('.carticon');
 const closeCart = document.querySelector('.closeCart');
 const cartOverlay = document.querySelector('.shopping-cart-overlay');
 const myCart = document.querySelector('.shopping-cart');
+const cartItems = document.querySelector('.cartitems');
 
 let cart = [];
 
@@ -13,13 +14,14 @@ let cart = [];
     burger.classList.toggle('fa-times');
     nav.classList.toggle('active');
   }
-
+  
   if (burger) {
     burger.addEventListener('click', toggleNav, false);
   }
   
+  
   function hideCart(){
-    closeCart.addEventListener('click', function(event){
+     closeCart.addEventListener('click', function(event){
       event.preventDefault();
       cartOverlay.classList.remove('transparentBcg');
       myCart.classList.remove('showCart');
@@ -42,7 +44,6 @@ let cart = [];
     totalcartitems.innerText = newTotal;
   }
   
-  
   function addToCart(){
     let cartbtns = document.querySelectorAll('.shopitem');
     cartbtns.forEach(function (cartbtn){
@@ -59,7 +60,8 @@ let cart = [];
         item.img = img;
         
         cart.push(item);
-        const cartItems = document.querySelector('.cartitems');
+        
+      
        const cartRow = document.createElement('div');
             
        cartRow.classList.add('cartrow');
@@ -79,8 +81,8 @@ let cart = [];
           cartItems.appendChild(cartRow);
           alert('Item added to cart');
           
-          itemCount();
           updateCart();
+          itemCount();
           removeFromCart();
           quantityChange();
       });
@@ -88,6 +90,7 @@ let cart = [];
   }
   
   addToCart();
+  
   
   function updateCart() {
     const cartItemContainer = document.querySelector('.cartitems');
@@ -97,11 +100,12 @@ let cart = [];
         let cartRow = cartRows[i];
         let priceElement = cartRow.querySelector('.cartprice');
         let quantityElement = cartRow.querySelector('.cartquantityinput');
-        let price = Number(priceElement.innerText.replace('Kshs', ''));
+        let price = Number(priceElement.textContent.replace('Kshs', ''));
         let quantity = quantityElement.value;
         total = total + (price * quantity);
     }
     total = document.querySelector('.carttotalprice').innerText = 'Kshs' + total;
+    console.log(total);
   }
   
   function quantityChange(){
