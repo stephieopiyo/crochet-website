@@ -164,7 +164,7 @@ nav ul li:active {
 }
 
 .imglink p{
-  background-color: rgb(204, 204, 204);
+  background-color: #ccc;
   position: absolute;
   bottom: 100px;
   left: 120px;
@@ -251,7 +251,6 @@ label {
    padding: 1em 1.5em;
    border-radius: 10px;
    background-color: #047bd6;
-   border: 1px solid #047bd6;
    color: #ffffff;
    display: block;
    font-size: 16px;
@@ -260,8 +259,7 @@ label {
 }
 
 .contactbtn:hover {
-    background: transparent;
-    color: #046bd6;
+    background-color: #0000ff;
 }
 
 .row::after {
@@ -464,7 +462,7 @@ h2 {
     color: #333;
     padding: 0;
     text-align-last: center;
-    font-size: 18px;
+    font-size: 16px;
     margin-right: 25px;
   }
   
@@ -523,15 +521,24 @@ h2 {
     padding: 15px;
   }
   
-  .banner {
-    width: 100vw;
+  .banner img{
+    width: 100%;
     height: auto;
+    margin: 10;
   }
   
-  .pattern-container{
-    padding: 10px;
-    margin: 15px;
+  .pattern-container > p,
+  .pattern-container > h3{
     font-size: 20px;
+    margin: 5px;
+    padding: 10px;
+  }
+  
+  .pattern-container  ul li{
+    font-size: 20px;
+    margin: 10px;
+    list-style: none;
+    padding: 10px;
   }
   
   /*Checkout*/
@@ -643,7 +650,7 @@ footer .address {
     flex-direction: column;
     justify-content: space-around;
     transition: all 400ms;
-    z-index: 5;
+    z-index: 1;
  }
  
   nav ul li {

@@ -1,17 +1,47 @@
 const burger = document.querySelector('.burger i');
- const nav = document.querySelector('nav ul');
+const nav = document.querySelector('nav ul');
+const carticon = document.querySelector('.carticon');
+const closeCart = document.querySelector('.closeCart');
+const cartOverlay = document.querySelector('.shopping-cart-overlay');
+const myCart = document.querySelector('.shopping-cart');
 
-// Defining a function
+let cart = [];
+
+
   function toggleNav() {
     burger.classList.toggle('fa-bars');
     burger.classList.toggle('fa-times');
     nav.classList.toggle('active');
   }
 
-  // Calling the function after click event occurs
   if (burger) {
     burger.addEventListener('click', toggleNav, false);
   }
+  
+  function hideCart(){
+    closeCart.addEventListener('click', function(event){
+      event.preventDefault();
+      cartOverlay.classList.remove('transparentBcg');
+      myCart.classList.remove('showCart');
+    });
+  }
+  hideCart();
+  
+  function showCart(){
+    carticon.addEventListener('click', function(event){
+      event.preventDefault();
+      cartOverlay.classList.add('transparentBcg');
+      myCart.classList.add('showCart');
+    });
+  }
+  showCart();
+  
+  function itemCount(){
+    let totalcartitems = document.querySelector('.badge');
+    let newTotal = Number(totalcartitems.innerText) + 1;
+    totalcartitems.innerText = newTotal;
+  }
+  
   
   function addToCart(){
     let cartbtns = document.querySelectorAll('.shopitem');
@@ -28,6 +58,7 @@ const burger = document.querySelector('.burger i');
         item.price = price;
         item.img = img;
         
+        cart.push(item);
         const cartItems = document.querySelector('.cartitems');
        const cartRow = document.createElement('div');
             
@@ -48,6 +79,7 @@ const burger = document.querySelector('.burger i');
           cartItems.appendChild(cartRow);
           alert('Item added to cart');
           
+          itemCount();
           updateCart();
           removeFromCart();
           quantityChange();
