@@ -133,7 +133,7 @@ nav ul li:active {
   border-radius: 8px;
   padding: 10px 15px;
   text-align: center;
-  font-size: 30px;
+  font-size: 2.0em;
 }
 
 .buttonlink:hover {
@@ -144,7 +144,7 @@ nav ul li:active {
 .categories {
   display: flex;
   flex-wrap: nowrap;
-  margin: 0 70px 30px 60px;
+  margin: 20px auto;
   align-items: center;
 }
 
@@ -634,7 +634,7 @@ footer .address {
 }
 
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 768px) {
   .burger {
     display: block;
   }
@@ -678,7 +678,7 @@ footer .address {
   
   .buttonlink {
     width: 80px;
-    font-size: 15px;
+    font-size: 1.0em;
   }
   
   .services div {
