@@ -131,9 +131,9 @@ nav ul li:active {
   border: 1px solid #0f83db;
   display: block;
   border-radius: 8px;
-  padding: 10px;
+  padding: 8px;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.0em;
 }
 
 .buttonlink:hover {
@@ -144,12 +144,12 @@ nav ul li:active {
 .categories {
   display: flex;
   flex-wrap: nowrap;
+  padding: 10px;
   margin: 10px auto;
   align-items: center;
 }
 
 .categories img {
-  width: 200px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   margin: 0 20px 20px 20px;
@@ -167,8 +167,8 @@ nav ul li:active {
 .imglink p{
   background-color: #ccc;
   position: absolute;
-  bottom: 100px;
-  left: 120px;
+  bottom: 70px;
+  left: 60px;
   padding: 10px;
   width: 100px;
   font-size: 16px;
